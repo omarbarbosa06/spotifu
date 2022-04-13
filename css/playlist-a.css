@@ -1,0 +1,52 @@
+.playlistA {
+  inline-size: 13em;
+  /* em because if I change font size, this will scale properly*/
+  padding: 1rem;
+  border-radius: 0.25rem;
+  background-color: var(--gray40);
+  box-sizing: border-box;
+  transition: 0.3s background;
+}
+.playlistA:hover .playlistA-cover button,
+.playlistA:focus-within .playlistA-cover button {
+  opacity: 1;
+  transform: translateY(0);
+}
+.playlistA:hover,
+.playlistA:focus-within {
+  background-color: var(--gray30);
+  cursor: pointer;
+}
+
+.playlistA-cover img {
+  vertical-align: bottom;
+  inline-size: 100%;
+  block-size: auto;
+  /* instead of putting REM, we can set width since it's only the image on that horizontal line */
+}
+
+.playlistA-cover {
+  position: relative;
+  border-radius: 0.75rem;
+  overflow: hidden;
+  margin-block-end: 1rem;
+}
+.playlistA button {
+  position: absolute;
+  right: 0.5rem;
+  bottom: 0.5rem;
+  opacity: 0;
+  transform: translateY(0.5rem);
+  will-change: opacity, transform;
+  transition: 0.3s opacity, 0.3s transform;
+}
+
+.playlistA-title {
+  font: var(--baseFontBold);
+  color: var(--white);
+  margin: 0;
+}
+.playlistA-description {
+  font: var(--baseFont);
+  margin: 0;
+}
